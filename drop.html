@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+/>
+    <title>Country Drop Down</title>
+    
+</head>
+<body>
+    <select id="countries">
+<option value="">-----Select a Country----</option>
+<option value="usa">USA 🇺🇸</option>
+<option value="paris">Paris 🇫🇷</option>
+<option value="sydney">Sydney 🇦🇺</option>
+<option value="tokyo">Tokyo 🇯🇵</option>
+    </select>
+
+    <script>
+         document.getElementById("countries").addEventListener("change", function () {
+
+            let usaTime = moment().tz("America/New_York").format("MMMM Do YYYY, h:mm:ss a");
+            let parisTime = moment().tz("Europe/Paris").format("MMMM Do YYYY, h:mm:ss a");
+            let tokyo = moment().tz("Asia/Tokyo").format("MMMM Do YYYY, h:mm:ss a");
+            let Australia = moment().tz("Australia/Sydney").format("MMMM Do YYYY, h:mm:ss a");
+  let choice = this.value;
+  if (choice === "usa") {
+    alert(`It is ${usaTime} in USA`);
+  } else if (choice === "paris") {
+    alert(`It is ${parisTime} in Paris`);
+  } else if (choice === "tokyo") {
+    alert(`It is ${tokyo} in Tokyo`);
+    } else if (choice === "sydney") {
+        alert(` It is ${Australia} in Australia`);
+  }
+});
+    </script>
+</body>
+</html>
